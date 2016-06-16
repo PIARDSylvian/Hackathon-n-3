@@ -1,0 +1,71 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AppBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+class User extends BaseUser
+{
+    protected $id;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $criterias;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $participations;
+
+
+    /**
+     * @var ArrayCollection
+     */
+    private $places;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->criterias = new ArrayCollection();
+        $this->participations = new ArrayCollection();
+        $this->places = new ArrayCollection();
+    }
+
+    /**
+     * Add criterias
+     *
+     * @param \AppBundle\Entity\Criteria $criterias
+     * @return User
+     */
+    public function addCriteria(\AppBundle\Entity\Criteria $criterias)
+    {
+        $this->criterias[] = $criterias;
+
+        return $this;
+    }
+
+    /**
+     * Remove criterias
+     *
+     * @param \AppBundle\Entity\Criteria $criterias
+     */
+    public function removeCriteria(\AppBundle\Entity\Criteria $criterias)
+    {
+        $this->criterias->removeElement($criterias);
+    }
+
+    /**
+     * Get criterias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCriterias()
+    {
+        return $this->criterias;
+    }
+}

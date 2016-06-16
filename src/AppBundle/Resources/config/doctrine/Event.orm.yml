@@ -1,0 +1,36 @@
+AppBundle\Entity\Event:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        url:
+            type: string
+            length: 255
+            nullable: true
+        dateStart:
+            type: datetime
+            column: date_start
+        dateEnd:
+            type: datetime
+            nullable: true
+            column: date_end
+        costEvent:
+            type: float
+            nullable: true
+            column: cost_event
+
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        place:
+            targetEntity: AppBundle\Entity\Place
+            inversedBy: events

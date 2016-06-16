@@ -1,0 +1,83 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Criterion
+ */
+class Criterion
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Criterion
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @var integer
+     */
+    private $type_criteria;
+
+
+    /**
+     * Set type_criteria
+     *
+     * @param integer $typeCriteria
+     * @return Criterion
+     */
+    public function setTypeCriteria($typeCriteria)
+    {
+        $this->type_criteria = $typeCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Get type_criteria
+     *
+     * @return integer 
+     */
+    public function getTypeCriteria()
+    {
+        return $this->type_criteria;
+    }
+}

@@ -1,79 +1,80 @@
 <?php
-// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
-class User extends BaseUser
+/**
+ * Travel
+ */
+class Travel
 {
-    protected $id;
+    /**
+     * @var int
+     */
+    private $id;
 
     /**
-     * @var ArrayCollection
+     * @var string
      */
-    private $criterias;
-
-    /**
-     * @var ArrayCollection
-     */
-    private $participations;
-
+    private $name;
 
     /**
      * @var ArrayCollection
      */
     private $places;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $participations;
+
+    
     public function __construct()
     {
-        parent::__construct();
-
-        $this->criterias = new ArrayCollection();
-        $this->participations = new ArrayCollection();
         $this->places = new ArrayCollection();
+        $this->participations = new ArrayCollection();
     }
 
     /**
-     * Add criterias
+     * Get id
      *
-     * @param \AppBundle\Entity\Criteria $criterias
-     * @return User
+     * @return integer 
      */
-    public function addCriteria(\AppBundle\Entity\Criteria $criterias)
+    public function getId()
     {
-        $this->criterias[] = $criterias;
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Travel
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Remove criterias
+     * Get name
      *
-     * @param \AppBundle\Entity\Criteria $criterias
+     * @return string 
      */
-    public function removeCriteria(\AppBundle\Entity\Criteria $criterias)
+    public function getName()
     {
-        $this->criterias->removeElement($criterias);
-    }
-
-    /**
-     * Get criterias
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCriterias()
-    {
-        return $this->criterias;
+        return $this->name;
     }
 
     /**
      * Add participations
      *
      * @param \AppBundle\Entity\Participation $participations
-     * @return User
+     * @return Travel
      */
     public function addParticipation(\AppBundle\Entity\Participation $participations)
     {
@@ -106,7 +107,7 @@ class User extends BaseUser
      * Add places
      *
      * @param \AppBundle\Entity\Place $places
-     * @return User
+     * @return Travel
      */
     public function addPlace(\AppBundle\Entity\Place $places)
     {

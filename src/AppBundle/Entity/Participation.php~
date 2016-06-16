@@ -1,0 +1,127 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Participation
+ */
+class Participation
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $budget;
+
+    /**
+     * @var int
+     */
+    private $maxDistance;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateStartAvaible;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateEndAvaible;
+
+    /**
+     * @var \AppBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * @var \AppBundle\Entity\Travel
+     */
+    private $travel;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Set maxDistance
+     *
+     * @param integer $maxDistance
+     * @return Participation
+     */
+    public function setMaxDistance($maxDistance)
+    {
+        $this->maxDistance = $maxDistance;
+
+        return $this;
+    }
+
+    /**
+     * Get maxDistance
+     *
+     * @return integer 
+     */
+    public function getMaxDistance()
+    {
+        return $this->maxDistance;
+    }
+
+    /**
+     * Set dateStartAvaible
+     *
+     * @param \DateTime $dateStartAvaible
+     * @return Participation
+     */
+    public function setDateStartAvaible($dateStartAvaible)
+    {
+        $this->dateStartAvaible = $dateStartAvaible;
+
+        return $this;
+    }
+
+    /**
+     * Get dateStartAvaible
+     *
+     * @return \DateTime 
+     */
+    public function getDateStartAvaible()
+    {
+        return $this->dateStartAvaible;
+    }
+
+    /**
+     * Set dateEndAvaible
+     *
+     * @param \DateTime $dateEndAvaible
+     * @return Participation
+     */
+    public function setDateEndAvaible($dateEndAvaible)
+    {
+        $this->dateEndAvaible = $dateEndAvaible;
+
+        return $this;
+    }
+
+    /**
+     * Get dateEndAvaible
+     *
+     * @return \DateTime 
+     */
+    public function getDateEndAvaible()
+    {
+        return $this->dateEndAvaible;
+    }
+}
