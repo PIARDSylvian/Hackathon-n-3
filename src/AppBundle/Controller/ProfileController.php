@@ -13,7 +13,14 @@ class ProfileController extends Controller
      */
     public function profileAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('AppBundle::profile.html.twig');
+    	$em = $this->getDoctrine()->getManager();
+    	$users = $this->container->get('security.context')->getToken()->getUser();
+ 
+    	$user = $em->getRepository("AppBundle:user")->findOneById($users->getId());
+
+
+    	 // var_dump($user);exit;
+
+        return $this->render('AppBundle::profile.html.twig', array("datauser" => $user));
     }
 }
