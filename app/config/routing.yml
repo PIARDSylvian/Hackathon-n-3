@@ -14,12 +14,16 @@ profile:
     path:     /profile
     defaults: { _controller: AppBundle:Profile:profile }
 
+edit_profile:
+    path:     /profile/edit
+    defaults: { _controller: AppBundle:Profile:edit }
+
 new_travel:
     path:     /travel/new
     defaults: { _controller: AppBundle:Travel:newTravel }
 
 show_travel:
-    path:     /travel
+    path:     /travel/show
     defaults: { _controller: AppBundle:Travel:showTravel }
 
 app:

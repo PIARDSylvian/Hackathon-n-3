@@ -6,6 +6,12 @@
 		<p>{{datauser.username}}<p>
 		<p>{{datauser.email}}<p>
 		{# <p style="color:red">{{datauser.username}}<p> #}
+<form method="post" action="{{ path('edit_profile') }}">
 
+	<input type="text" name="username" value="{{datauser.username}}">
+	<input type="mail" name="email" value="{{datauser.email}}">
+
+<input type="submit" class="bouton" value="modifier">
+</form>
 		
 {% endblock body %}
