@@ -1,3 +1,7 @@
+landing_page:
+    path:     /
+    defaults: { _controller: AppBundle:Landing:index }
+
 login:
     path:     /login
     defaults: { _controller: AppBundle:Security:login }
@@ -7,7 +11,7 @@ register:
     defaults: { _controller: AppBundle:Registration:register }
 
 dashboard:
-    path:     /
+    path:     /dashboard
     defaults: { _controller: AppBundle:Dashboard:index }
 
 profile:
