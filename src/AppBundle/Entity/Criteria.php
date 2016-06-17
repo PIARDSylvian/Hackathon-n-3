@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Criteria
 {
+    const ACCEPTED_PLACE = 1;
+    const ACCEPTED_LOCOMOTION = 2;
+    
     /**
      * @var int
      */
