@@ -17,11 +17,13 @@ class DashboardController extends Controller
         $user = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
-        $travels = $em->getRepository("AppBundle:Travel")->findAll();
+        
+        $travels = $em->getRepository("AppBundle:Travel")->findByUserParticipations($user);
+        
 
 
-        $notification = "Projet \"Week-end Montagne\" : un ou plusieurs de vos amis ont une disponibilité différente. La date du séjour est désormais adaptée.";
         /*
+        $notification = "Projet \"Week-end Montagne\" : un ou plusieurs de vos amis ont une disponibilité différente. La date du séjour est désormais adaptée.";
         $date_start = new \DateTime();
         $date_end = new \DateTime("+1 day");
         */

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +13,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class TravelRepository extends EntityRepository
 {
+    public function findByUserParticipations(User $user)
+    {
+        $query = $this->createQueryBuilder('t')
+            ->join('t.participations', 'p')
+            ->where('p.user = :user')
+            ->setParameter(':user', $user);
+
+        return $query->getQuery()->getResult();
+    }
 }
