@@ -24,7 +24,7 @@ class Criteria
     /**
      * @var ArrayCollection
      */
-    private $users;
+    public $users;
 
     public function __construct()
     {
@@ -66,7 +66,7 @@ class Criteria
     /**
      * @var integer
      */
-    private $type_criteria;
+    public $type_criteria;
 
 
     /**

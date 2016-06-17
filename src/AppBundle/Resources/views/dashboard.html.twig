@@ -2,4 +2,13 @@
 
 {% block body %}
 <h1>Ici le Dashboard<h1>
+
+{% for travel in travels %}
+	<div style="width:100px; height:200px; border: solid black 1px;">
+		{{travel}}
+	</div>
+{% endfor %}
+	<div style="width:300px; height:200px; border: solid black 1px; padding-top:150px; font-size:20px; text-align:center;">
+		<a href="{{ path('new_travel') }}">Ajouter un voyage</a>
+	</div>
 {% endblock body %}

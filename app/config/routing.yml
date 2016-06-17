@@ -6,6 +6,10 @@ login:
     path:     /login
     defaults: { _controller: AppBundle:Security:login }
 
+login_check:
+    path:     /login/check
+    defaults: { _controller: AppBundle:Security:check }
+
 register:
     path:     /register
     defaults: { _controller: AppBundle:Registration:register }

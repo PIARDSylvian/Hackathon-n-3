@@ -3,15 +3,39 @@
 {% block body %}
 <h1>Ici Ma page de profil</h1>
 
-		<p>{{datauser.username}}<p>
-		<p>{{datauser.email}}<p>
-		{# <p style="color:red">{{datauser.username}}<p> #}
+<p>{{datauser.username}}<p>
+<p>{{datauser.email}}<p>
+
 <form method="post" action="{{ path('edit_profile') }}">
 
 	<input type="text" name="username" value="{{datauser.username}}">
+	<br>
 	<input type="mail" name="email" value="{{datauser.email}}">
-
-<input type="submit" class="bouton" value="modifier">
+	<br>
+	<input type="submit" class="bouton" value="modifier">
 </form>
-		
+
+{{ form_start(form, { 'action': path('fos_user_change_password'), 'attr': { 'class': 'fos_user_change_password' } }) }}
+
+{{ form_widget(form) }}
+    
+    <div>
+        <input type="submit" value="modifier">
+    </div>
+
+{{ form_end(form) }}
+
+<form method="post" action="{{ path('edit_profile') }}">
+
+	{% for preference in preferences %}
+		{% if 'checkbox' not in preference  %}
+        <label><input type="checkbox" id="{{preference.id}}" name="{{preference.name}}" value="{{preference.type_criteria}}" checked> {{preference.name}}</label>
+        <br>
+        {% else %}
+        <label><input type="checkbox" id="{{preference.id}}" value="{{preference.type_criteria}}"> {{preference.name}}</label>
+        <br>
+        {% endif %}
+	{% endfor %}
+	<input type="submit" class="bouton" value="modifier">
+</form>
 {% endblock body %}
