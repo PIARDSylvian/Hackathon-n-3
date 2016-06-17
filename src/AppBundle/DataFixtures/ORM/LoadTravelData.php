@@ -21,12 +21,16 @@ class LoadTravelData extends LoadCommon
         $entity = new Travel();
         $entity->setName('Week-end à Orléans');
         $entity->addPlace($this->getReference('place_orleans'));
+        $entity->setDateStart(new \DateTime('2016-07-15'));
+        $entity->setDateEnd(new \DateTime('2016-07-19'));
         $manager->persist($entity);
         $this->setReference('travel_orleans', $entity);
 
         $entity = new Travel();
         $entity->setName('Vacances à Rennes');
         $entity->addPlace($this->getReference('place_rennes'));
+        $entity->setDateStart(new \DateTime('2016-07-19'));
+        $entity->setDateEnd(new \DateTime('2016-07-25'));
         $manager->persist($entity);
         $this->setReference('travel_rennes', $entity);
 
