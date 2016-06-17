@@ -1,0 +1,26 @@
+AppBundle\Entity\Travel:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TravelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    manyToMany:
+        places:
+            targetEntity: AppBundle\Entity\Place
+            inversedBy: travels
+
+    oneToMany:
+        participations:
+            targetEntity: AppBundle\Entity\Participation
+            mappedBy: travel
+
+    lifecycleCallbacks: {  }

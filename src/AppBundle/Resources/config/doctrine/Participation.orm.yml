@@ -1,0 +1,34 @@
+AppBundle\Entity\Participation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ParticipationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        budget:
+            type: integer
+            nullable: true
+        maxDistance:
+            type: integer
+            nullable: true
+            column: max_distance
+        dateStartAvaible:
+            type: date
+            column: date_start_avaible
+        dateEndAvaible:
+            type: date
+            column: date_end_avaible
+
+    manyToOne:
+        user:
+            targetEntity: AppBundle\Entity\User
+            inversedBy: participations
+        travel:
+            targetEntity: AppBundle\Entity\Travel
+            inversedBy: participations
+
+    lifecycleCallbacks: {  }

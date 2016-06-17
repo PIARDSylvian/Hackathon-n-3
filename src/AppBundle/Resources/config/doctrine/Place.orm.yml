@@ -1,0 +1,55 @@
+AppBundle\Entity\Place:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PlaceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        city:
+            type: string
+            length: 255
+        longitude:
+            type: string
+            length: 255
+            nullable: true
+        latitude:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 255
+            nullable: true
+        cost_night:
+            type: float
+            nullable: true
+            column: cost_night
+        cost_daylife:
+            type: float
+            nullable: true
+            column: cost_daylife
+        url_gmap:
+            type: string
+            length: 255
+            nullable: true
+
+    oneToMany:
+        events:
+            targetEntity: AppBundle\Entity\Event
+            mappedBy: place
+
+    manyToMany:
+        users:
+            targetEntity: AppBundle\Entity\User
+            inversedBy: places
+
+        travels:
+            targetEntity: AppBundle\Entity\Travel
+            mappedBy: places
+
+    lifecycleCallbacks: {  }
+

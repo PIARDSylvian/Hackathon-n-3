@@ -1,0 +1,23 @@
+AppBundle\Entity\Criteria:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CriteriaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        type_criteria:
+            type: integer
+
+    manyToMany:
+        users:
+            targetEntity: AppBundle\Entity\User
+            mappedBy: criterias
+
+    lifecycleCallbacks: {  }
