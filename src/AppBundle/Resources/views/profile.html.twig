@@ -2,36 +2,28 @@
 
 {% block body %}
 
-<form method="post" action="{{ path('edit_profile') }}">
+    <h1>Edite ton profil</h1>
 
-	<label>User name : <input type="text" name="username" value="{{datauser.username}}"></label>
-	<br>
-	<label>Email : <input type="mail" name="email" value="{{datauser.email}}"></label>
-	<br>
+<div class="form_center">
+
+<form class='form_user' method="post" action="{{ path('edit_profile') }}">
+
+	<label>User name :</label><input type="text" name="username" value="{{datauser.username}}">
+	<label>Email :</label><input type="email" name="email" value="{{datauser.email}}">
 	<input type="submit" class="bouton" value="modifier">
 </form>
 
-{{ form_start(form, { 'action': path('fos_user_change_password'), 'attr': { 'class': 'fos_user_change_password' } }) }}
+{{ form_start(form, { 'action': path('fos_user_change_password'), 'attr': { 'class': 'fos_user_change_password form_user' } }) }}
 
 {{ form_widget(form) }}
     
     <div>
-        <input type="submit" value="modifier">
+        <a class="bt_cancel" href="{{ path('dashboard') }}">Annuler</a>
+        <input class='bt_validate' type="submit" value="Enregistrer">
     </div>
 
 {{ form_end(form) }}
 
-<form method="post" action="{{ path('edit_profile') }}">
+</div>
 
-	{% for preference in preferences %}
-		{% if 'checkbox' not in preference  %}
-        <label><input type="checkbox" id="{{preference.id}}" name="{{preference.name}}" value="{{preference.type_criteria}}" checked> {{preference.name}}</label>
-        <br>
-        {% else %}
-        <label><input type="checkbox" id="{{preference.id}}" value="{{preference.type_criteria}}"> {{preference.name}}</label>
-        <br>
-        {% endif %}
-	{% endfor %}
-	<input type="submit" class="bouton" value="modifier">
-</form>
 {% endblock body %}
