@@ -1,16 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Ici Ma page de profil</h1>
-
-<p>{{datauser.username}}<p>
-<p>{{datauser.email}}<p>
 
 <form method="post" action="{{ path('edit_profile') }}">
 
-	<input type="text" name="username" value="{{datauser.username}}">
+	<label>User name : <input type="text" name="username" value="{{datauser.username}}"></label>
 	<br>
-	<input type="mail" name="email" value="{{datauser.email}}">
+	<label>Email : <input type="mail" name="email" value="{{datauser.email}}"></label>
 	<br>
 	<input type="submit" class="bouton" value="modifier">
 </form>

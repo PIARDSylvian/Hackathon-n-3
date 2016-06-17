@@ -81,38 +81,41 @@ class ProfileController extends Controller
 
     public function editAction(Request $request)
     {
+        
         $em = $this->getDoctrine()->getManager();
         //recuperation de l identifiant courant
         $user = $this->getUser();
 
-        /*
-        //recuperation des info sur la page
-        $username = $request->request->get('username');
-        $email = $request->request->get('email');
+        if ($request->isMethod("POST")) {
+            //recuperation des info sur la page
+            $username = $request->request->get('username');
+            $email = $request->request->get('email');
 
-        //attribution des valeurs
-        $user->setUsername($username);
-        $user->setEmail($email);
-        
-        //envoi
-        $em->persist($user);
-        $em->flush();
-
-        //recuperation des info sur la page
-        $typeCriteria = $request->request->get('preference.name');
-
+            //attribution des valeurs
+            $user->setUsername($username);
+            $user->setEmail($email);
+            
+            //envoi
+            $em->persist($user);
+            $em->flush();
+        };
 
 //BUG !
-        // enregistrement des donné dans une nouvelle entity.
-        $criteria = new Criteria();
-        $criteria   ->setTypeCriteria('TEST')
-                    ->setName('TEST')
-                ;
+        // //recuperation des info sur la page
+        // $typeCriteria = $request->request->get('preference.name');
 
-        $em->persist($criteria);
-        $em->flush();
 
-*/
+
+        // // enregistrement des donné dans une nouvelle entity.
+        // $criteria = new Criteria();
+        // $criteria   ->setTypeCriteria('TEST')
+        //             ->setName('TEST')
+        //         ;
+
+        // $em->persist($criteria);
+        // $em->flush();
+
+
 
         $url = $this -> generateUrl('profile');
         $response = new RedirectResponse($url);
