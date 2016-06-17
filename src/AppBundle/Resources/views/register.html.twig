@@ -4,11 +4,16 @@
 
 {% block body %}
 
+    <h1>Ouvre ton compte</h1>
+
+
+    <div class="form_center">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_widget(form) }}
     <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <a class="bt_cancel" href="{{ path('landing_page') }}">Annuler</a>
+        <input class='bt_validate' type="submit" value="{{ 'registration.submit'|trans }}" />
     </div>
 {{ form_end(form) }}
-
+    </div>
 {% endblock body %}

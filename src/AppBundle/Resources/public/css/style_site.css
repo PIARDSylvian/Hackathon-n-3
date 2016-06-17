@@ -126,23 +126,6 @@ h2 {
     font-size: 20pt;
 }
 
-/*===============================================================================
-    BUTTONS
-===============================================================================*/
-.bt {
-    padding:10px 20px;
-    border-width: 0px;
-}
-
-.bt_validate {
-    color:#cffb90;
-    background-color: #74a62c;
-}
-
-.bt_cancel {
-    color:#fdc69e;
-    background-color: #e7503d;
-}
 
 
 /*===============================================================================
@@ -152,18 +135,37 @@ input {
     color: #646464;
     border: 1px solid #646464;
     padding:10px;
+    margin-bottom:20px;
 }
 
+/*===============================================================================
+    BUTTONS
+===============================================================================*/
+.bt, .bt_validate, .bt_cancel {
+    padding:10px 20px;
+    border-width: 0px;
+}
+
+.bt_validate {
+    color:#cffb90;
+    background-color: #74a62c;
+
+}
+
+.bt_cancel {
+    color:#fdc69e;
+    background-color: #e7503d;
+    text-decoration: none;
+    border:1px solid #e7503d;
+}
+
+form label {
+    display:block;
+}
 
 /*===============================================================================
     DASHBOARD
 ===============================================================================*/
-.notification {
-    font-size:12pt;
-    color: #74a62c;
-    font-style: italic;
-    text-align: center;
-}
 .bt_dashboard {
     display:inline-block;
     margin:10px;
@@ -223,4 +225,20 @@ a.bt_dashboard:hover {
     font-size: 12pt;
     color: #74a62c;
     margin-bottom:20px;
+}
+
+/*===============================================================================
+    page registration
+===============================================================================*/
+form[name='fos_user_registration_form']
+{
+    margin:20px auto;
+    width:400px;
+
+}
+form[name='fos_user_registration_form'] input[type='text'],
+form[name='fos_user_registration_form'] input[type='email'],
+form[name='fos_user_registration_form'] input[type='password']
+{
+    width:380px;
 }
