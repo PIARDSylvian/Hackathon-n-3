@@ -12,6 +12,12 @@ AppBundle\Entity\Travel:
         name:
             type: string
             length: 255
+        date_start:
+            type: date
+            nullable: false
+        date_end:
+            type: date
+            nullable: false
 
     manyToMany:
         places:

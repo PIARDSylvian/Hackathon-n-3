@@ -13,6 +13,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class TravelRepository extends EntityRepository
 {
+    /**
+     * @param User $user
+     * @return \AppBundle\Entity\Travel[]
+     */
     public function findByUserParticipations(User $user)
     {
         $query = $this->createQueryBuilder('t')
