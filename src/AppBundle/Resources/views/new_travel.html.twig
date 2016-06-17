@@ -1,5 +1,18 @@
-{% extends "base.html.twig" %}
+{% extends "travel.html.twig" %}
+
 
 {% block body %}
-<h1>Ici affichage nouveau voyage<h1>
+    <h1>Ici affichage nouveau voyage</h1>
+    <p>
+        Text
+    </p>
 {% endblock body %}
+
+{% block javascripts %}
+
+    <script>
+    $(document).ready(function() {
+        wcs.test();
+    });
+    </script>
+{% endblock %}

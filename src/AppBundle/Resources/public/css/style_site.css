@@ -1,0 +1,226 @@
+/*===============================================================================
+    FONTS
+===============================================================================*/
+@import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Open+Sans:400,600,700|Source+Sans+Pro:400,700|Source+Serif+Pro:400,700);
+
+
+
+/*===============================================================================
+    VARIOUS
+===============================================================================*/
+.row {
+    width:1000px;
+    margin:0 auto;
+}
+
+/*===============================================================================
+    PAGE HEADER
+===============================================================================*/
+#logo {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size:22pt;
+    color:white;
+}
+
+header {
+    background-color: rgba(0,0,0,0.7);
+}
+
+header {
+    position:relative;
+    width:100%;
+    height:60px;
+}
+
+header #logo {
+    float:left;
+    margin-left:20px;
+    margin-top:10px;
+    display: inline-block;
+    width:200px;
+}
+
+header #menu {
+    float:right;
+    right:0;
+    display:inline-block;
+    width:500px;
+}
+
+header #menu li {
+    display:inline-block;
+    width:140px;
+}
+
+header #menu li a {
+    color:white;
+    text-decoration: none;
+}
+
+header #menu li a:hover {
+    color: #ffdc71;
+}
+
+header #menu li.selected {
+    color: #ffdc71;
+    border-bottom: 4px solid #ffdc71;
+}
+
+/*===============================================================================
+    PAGE FOOTER
+===============================================================================*/
+footer {
+    background-color: rgba(0,0,0,0.7);
+    height:60px;
+    text-align: center;
+    color:white;
+    bottom:0px;
+    padding:10px;
+}
+
+footer a {
+    color:white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffdc71;
+}
+
+
+
+/*===============================================================================
+    PAGE BODY
+===============================================================================*/
+body {
+    padding:0;
+    margin:0;
+    background-image: url('imgs/appareil_photo_nb.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+#html_body {
+    background-color:white;
+    padding: 20px 60px;
+    margin-top:200px;
+}
+
+/*===============================================================================
+    PAGE TEXT
+===============================================================================*/
+*, table td *, table th * {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14pt;
+}
+
+h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size:36pt;
+    color: #673f33;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 20pt;
+}
+
+/*===============================================================================
+    BUTTONS
+===============================================================================*/
+.bt {
+    padding:10px 20px;
+    border-width: 0px;
+}
+
+.bt_validate {
+    color:#cffb90;
+    background-color: #74a62c;
+}
+
+.bt_cancel {
+    color:#fdc69e;
+    background-color: #e7503d;
+}
+
+
+/*===============================================================================
+    FORMS
+===============================================================================*/
+input {
+    color: #646464;
+    border: 1px solid #646464;
+    padding:10px;
+}
+
+
+/*===============================================================================
+    DASHBOARD
+===============================================================================*/
+.notification {
+    font-size:12pt;
+    color: #74a62c;
+    font-style: italic;
+    text-align: center;
+}
+.bt_dashboard {
+    display:inline-block;
+    margin:10px;
+    border:1px solid #646464;
+    padding:10px 20px;
+}
+a.bt_dashboard {
+    text-decoration: none;
+    color: #646464;
+    transition:all 0.2s;
+}
+a.bt_dashboard:hover {
+    text-decoration: none;
+    background-color:#CCCCCC;
+    color:white;
+    border:1px solid white;
+    transition:all 0.1s;
+}
+.cell {
+    display: table-cell;
+    padding:20px;
+    vertical-align: top;
+}
+.dashboard_travel, .dashboard_travel_new {
+    display:inline-block;
+    width:300px;
+    height:400px;
+    text-align:center;
+}
+
+.dashboard_travel {
+    border: 1px solid #646464;
+    text-align:center;
+}
+.dashboard_travel IMG {
+    width:100%;
+    height:auto;
+}
+
+.dashboard_travel_new {
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px dashed #646464;
+    text-align:center;
+    background-color: #DFDFDF;
+}
+
+
+.dashboard_travel_name {
+    font-weight: bold;
+    margin-top:20px;
+}
+
+
+.dashboard_travel_date {
+    font-style: italic;
+    font-size: 12pt;
+    color: #74a62c;
+    margin-bottom:20px;
+}

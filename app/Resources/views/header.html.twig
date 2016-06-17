@@ -1,0 +1,14 @@
+<header>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div id="logo">
+            Road Trip
+        </div>
+        <div id="menu">
+        <ul>
+            <li><a href="{{ path('dashboard') }}" >Accueil</a></li>
+            <li><a href="{{ path('edit_profile') }}" >Profil</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+        </ul>
+        </div>
+    {% endif %}
+</header>

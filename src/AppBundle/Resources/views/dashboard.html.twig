@@ -1,14 +1,30 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Ici le Dashboard<h1>
+	{{ parent() }}
+	<div class="row">
+		<h1>Vos vacances</h1>
 
-{% for travel in travels %}
-	<div style="width:100px; height:200px; border: solid black 1px;">
-		{{travel}}
-	</div>
-{% endfor %}
-	<div style="width:300px; height:200px; border: solid black 1px; padding-top:150px; font-size:20px; text-align:center;">
-		<a href="{{ path('new_travel') }}">Ajouter un voyage</a>
+		<div class="notification">
+			{{ notification }}
+		</div>
+
+		{% for travel in travels %}
+			<div class="cell">
+				<div class="dashboard_travel">
+					<img src="{{ asset('bundles/app/photos/' ~ travel.places[0].photoFilename) }}" height="100" width="100">
+					<div class="dashboard_travel_name">{{travel.name}}</div>
+					<div class="dashboard_travel_date">{{ travel.dateStart|date("d/m/Y") }} au {{ travel.dateEnd|date("d/m/Y") }} </div>
+					<a class="bt_dashboard" href="{{ path('show_travel', {'id':travel.id}) }}">DETAILS</a>
+				</div>
+			</div>
+		{% endfor %}
+
+		<div class="cell">
+			<div class="dashboard_travel_new">
+
+				<a class="bt_dashboard" href="{{ path('new_travel') }}">Ajouter un voyage</a>
+			</div>
+		</div>
 	</div>
 {% endblock body %}

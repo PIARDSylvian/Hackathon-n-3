@@ -2,16 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}Road Trip - Trouvez la destination de vos vacances entre amis{% endblock %}</title>
+
+        {% block stylesheets %}
+            {% include "stylesheet.html.twig" %}
+        {% endblock %}
+
+        {% block header %}
+        <script src="{{ asset('bundles/app/js/jquery-2.2.4.min.js') }}"></script>
+        {% endblock %}
     </head>
     <body>
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a>
-        {% else %}
-        {% endif %}
-        {% block body %}{% endblock %}
+        {% include "header.html.twig" %}
+
+        <div id="html_body">
+        {% block body %}
+        {% endblock %}
+        </div>
+
+        {% include "footer.html.twig" %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

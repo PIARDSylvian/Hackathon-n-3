@@ -17,7 +17,7 @@ class TravelController extends Controller
         return $this->render('AppBundle::new_travel.html.twig');
     }
 
-    public function showTravelAction(Request $request)
+    public function showTravelAction(Request $request, Travel $travel)
     {
         // replace this example code with whatever you need
         return $this->render('AppBundle::travel.html.twig');

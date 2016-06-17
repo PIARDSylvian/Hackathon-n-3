@@ -85,6 +85,7 @@ class ProfileController extends Controller
         //recuperation de l identifiant courant
         $user = $this->getUser();
 
+        /*
         //recuperation des info sur la page
         $username = $request->request->get('username');
         $email = $request->request->get('email');
@@ -111,7 +112,7 @@ class ProfileController extends Controller
         $em->persist($criteria);
         $em->flush();
 
-
+*/
 
         $url = $this -> generateUrl('profile');
         $response = new RedirectResponse($url);

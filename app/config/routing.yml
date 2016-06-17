@@ -31,7 +31,7 @@ new_travel:
     defaults: { _controller: AppBundle:Travel:newTravel }
 
 show_travel:
-    path:     /travel/show
+    path:     /travel/show/{id}
     defaults: { _controller: AppBundle:Travel:showTravel }
 
 app:

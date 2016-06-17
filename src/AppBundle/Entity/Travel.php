@@ -30,11 +30,62 @@ class Travel
      */
     private $participations;
 
-    
+    /**
+     * Not persisted in database
+     * @var \DateTime
+     */
+    private $date_start;
+
+    /**
+     * Not persisted in database
+     * @var \DateTime
+     */
+    private $date_end;
+
     public function __construct()
     {
         $this->places = new ArrayCollection();
         $this->participations = new ArrayCollection();
+        $this->date_start   = new \DateTime("2016-07-17");
+        $this->date_end     = new \DateTime("2017-07-18");
+    }
+
+
+    /**
+     * @param \DateTime $date_start
+     * @return $this
+     */
+    public function setDateStart(\DateTime $date_start)
+    {
+        $this->date_start = $date_start;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $date_end
+     * @return $this
+     */
+    public function setDateEnd(\DateTime $date_end)
+    {
+        $this->date_end = $date_end;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateStart()
+    {
+        return $this->date_start;
+    }
+
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateEnd()
+    {
+        return $this->date_end;
     }
 
     /**
