@@ -11,7 +11,7 @@
 					<img src="{{ asset('bundles/app/photos/' ~ travel.places[0].photoFilename) }}" height="100" width="100">
 					<div class="dashboard_travel_name">{{travel.name}}</div>
 					<div class="dashboard_travel_date">{{ travel.dateStart|date("d/m/Y") }} au {{ travel.dateEnd|date("d/m/Y") }} </div>
-					<a class="bt_dashboard" href="{{ path('show_travel', {'id':travel.id}) }}">DETAILS</a>
+					<a class="bt_dashboard" href="#">DETAILS</a>
 				</div>
 			</div>
 		{% endfor %}
@@ -19,7 +19,7 @@
 		<div class="cell">
 			<div class="dashboard_travel_new">
 
-				<a class="bt_dashboard" href="{{ path('new_travel') }}">Ajouter un voyage</a>
+				<a class="bt_dashboard" href="#">Ajouter un voyage</a>
 			</div>
 		</div>
 	</div>
