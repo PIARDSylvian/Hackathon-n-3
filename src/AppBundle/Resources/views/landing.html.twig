@@ -1,10 +1,82 @@
-{% extends "base.html.twig" %}
+       <!DOCTYPE html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>jQuery Parallax Plugin Demo</title>
+            <link href="{{ asset('bundles/app/css/style_landing.css') }}" rel="stylesheet" type="text/css" />
+            <script type="text/javascript" src="{{ asset('bundles/app/js/landingpage/jquery-1.6.4.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/js/landingpage/jquery.parallax-1.1.3.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/js/landingpage/jquery.localscroll-1.2.7-min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/js/landingpage/jquery.scrollTo-1.4.2-min.js') }}"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#nav').localScroll(800);
 
-{% block body %}
-<h1>Ici Landing page</h1>
+                    //.parallax(xPosition, speedFactor, outerHeight) options:
+                    //xPosition - Horizontal position of the element
+                    //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+                    //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+                    $('#intro').parallax("50%", 0.1);
+                    $('#second').parallax("50%", 0.1);
+                    $('.bg').parallax("50%", 0.4);
+                    $('#third').parallax("50%", 0.3);
+                    $('#fourth').parallax("50%", 0.3);
 
-<a href="{{ path('login') }}">Login<a>
-<br>
-<a href="{{ path('register') }}">register<a>
+                })
+            </script>
+        </head>
 
-{% endblock body %}
+        <body>
+        <ul id="nav">
+            <li><a href="#intro" title="Next Section"><img src="{{ asset('bundles/app/css/imgs/dot.png') }}" alt="Link" /></a></li>
+            <li><a href="#second" title="Next Section"><img src="{{ asset('bundles/app/css/imgs/dot.png') }}" alt="Link" /></a></li>
+            <li><a href="#third" title="Next Section"><img src="{{ asset('bundles/app/css/imgs/dot.png') }}" alt="Link" /></a></li>
+            <li><a href="#fourth" title="Next Section"><img src="{{ asset('bundles/app/css/imgs/dot.png') }}" alt="Link" /></a></li>
+        </ul>
+
+        <div id="intro">
+            <div class="title">
+                <p class="title">Perfect Trip<p>
+                <p class="subtitle">Organise ton voyage entre amis</p>
+            </div>
+        </div> <!--#intro-->
+
+        <div id="second">
+            <div class="story"><div class="bg"></div>
+                <div class="float-right">
+                    <h2>Crée ton profile</h2>
+                    <p>Indique tes préférences:</br>
+                        -ton moyen de transport favori</br>
+                        -ton budget<br>
+                        -tes disponibilités</br>
+                        Perfect trip s'occupe de trouver le meilleur voyage</p>
+                </div>
+            </div> <!--.story-->
+
+        </div> <!--#second-->
+
+        <div id="third">
+            <div class="story">
+                <div class="float-left">
+                    <h2>Invite tes amis</h2>
+                    <p>Crée ton groupe d'amis pour trouver le voyage de votre vie</br>
+                        L'application trouve pour votre groupe les voyages adaptés à vos profils</br>
+                        Participez aux meilleures activités: festivals, sports extrêmes, parcs d'attractions!
+                </div>
+            </div> <!--.story-->
+        </div> <!--#third-->
+
+        <div id="fourth">
+            <div class="story">
+                <div class="center">
+                    <a href="{{ path('register') }}" class="myButton">Inscris-toi et trouve ton voyage entre amis !</a>
+                    <br />
+                    <a href="{{ path('login') }}">Se connecter<a>
+
+                </div>
+            </div> <!--.story-->
+
+        </div> <!--#third-->
+
+        </body>
+        </html>
