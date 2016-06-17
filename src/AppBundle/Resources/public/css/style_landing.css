@@ -21,11 +21,10 @@ body{
 
 
 p{
-	margin: 0 0 20px 0;	
+	margin: 0 0 6px 0;
 }
 
 p, ul{
-	font-family:"Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size-adjust:0.488;
 	font-weight:200;
 	font-style:normal;
@@ -36,21 +35,21 @@ img{
 }
 
 h1, #pixels{
-	font-family:"Museo 900", Verdana, serif;
+	font-family: 'Source Serif Pro', serif;
 	font-size-adjust:0.40;
 	font-weight:700;
 	font-style:normal;
 }
 
 h2{
-	font-family:"Beau Sans Pro Book", Verdana, sans-serif;
+	font-family: 'Source Serif Pro', serif;
 	font-size-adjust:0.531;
 	font-weight:500;
 	text-align: center;
 }
 
 h3{
-	font-family:"Beau Sans Pro Book", Verdana, sans-serif;
+	font-family: 'Source Serif Pro', serif;
 	font-size-adjust:0.531;
 	font-weight:500;
 	text-align: center;
@@ -145,16 +144,15 @@ h3{
 	position: relative;
 	width: 350px;	
 }
+/** button Register**/
 .myButton {
-	background-color:#44c767;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid #29668f;
+	background-color:#74a62c;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color:#cffb90;
+	font-family: 'Open Sans', sans-serif;
 	font-size:20px;
 	font-weight:bold;
 	padding:20px 50px;
@@ -164,6 +162,32 @@ h3{
 	background-color:#5cbf2a;
 }
 .myButton:active {
+	position:relative;
+	top:1px;
+}
+/** button Login**/
+.myButton2 {
+	background-color:rgba(0,0,0,0.2);
+	display:inline-block;
+	cursor:pointer;
+	/*color:#646464;*/
+	color:white;
+	font-family: 'Open Sans', sans-serif;
+	font-size:12px;
+	padding:8px 24px;
+	text-decoration:none;
+	margin-top: 6px;
+	transition:all 0.2s;
+	border:1px solid rgba(255,255,255,0.5);
+}
+
+.myButton2:hover {
+	background-color:rgba(0,0,0,0.5);
+/*	background-color:#f6f6f6; */
+	transition:all 0.1s;
+}
+
+.myButton2:active {
 	position:relative;
 	top:1px;
 }
