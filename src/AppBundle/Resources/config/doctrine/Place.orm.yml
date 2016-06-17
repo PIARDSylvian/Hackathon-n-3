@@ -36,6 +36,10 @@ AppBundle\Entity\Place:
             type: string
             length: 255
             nullable: true
+        photo_filename:
+            type: string
+            length: 255
+            nullable: false
 
     oneToMany:
         events:

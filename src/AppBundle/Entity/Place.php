@@ -52,6 +52,11 @@ class Place
     private $url_gmap;
 
     /**
+     * @var string
+     */
+    private $photo_filename;
+
+    /**
      * @var ArrayCollection
      */
     private $events;
@@ -74,6 +79,7 @@ class Place
         $this->events = new ArrayCollection();
         $this->users = new ArrayCollection();
         $this->travels = new ArrayCollection();
+        $this->photo_filename = '';
     }
 
     /**
@@ -246,6 +252,24 @@ class Place
     public function getUrlGmap()
     {
         return $this->url_gmap;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhotoFilename()
+    {
+        return $this->photo_filename;
+    }
+
+    /**
+     * @param string $photo_filename
+     * @return $this;
+     */
+    public function setPhotoFilename($photo_filename)
+    {
+        $this->photo_filename = $photo_filename;
+        return $this;
     }
 
     /**
