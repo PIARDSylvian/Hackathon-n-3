@@ -230,7 +230,7 @@ a.bt_dashboard:hover {
 /*===============================================================================
     page registration
 ===============================================================================*/
-form[name='fos_user_registration_form']
+form[name='fos_user_registration_form'], .form_user
 {
     margin:20px auto;
     width:400px;
@@ -238,7 +238,17 @@ form[name='fos_user_registration_form']
 }
 form[name='fos_user_registration_form'] input[type='text'],
 form[name='fos_user_registration_form'] input[type='email'],
-form[name='fos_user_registration_form'] input[type='password']
+form[name='fos_user_registration_form'] input[type='password'],
+.form_user input[type='text'],
+.form_user input[type='email'],
+.form_user input[type='password']
 {
     width:380px;
+}
+
+.remember_me input {
+    display:inline;
+}
+.remember_me label {
+    display:inline;
 }
